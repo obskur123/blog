@@ -20,6 +20,10 @@ wasm-bindgen = "=0.2.92"
 thiserror = "1"
 tracing = { version = "0.1", optional = true }
 http = "1"
+markdown = "1.0.0-alpha.18"
+serde = "1.0.204"
+serde_yaml = "0.9"
+
 
 [features]
 hydrate = ["leptos/hydrate", "leptos_meta/hydrate", "leptos_router/hydrate"]

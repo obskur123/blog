@@ -1,3 +1,101 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add these to your Tailwind CSS file or custom CSS */
+
+.blog-post h1 {
+    @apply text-4xl font-bold mb-6 text-gray-800;
+}
+
+.blog-post h2 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-gray-700;
+}
+
+.blog-post h3 {
+    @apply text-xl font-semibold mt-6 mb-3 text-gray-700;
+}
+
+.blog-post p {
+    @apply mb-4 text-gray-600 leading-relaxed;
+}
+
+.blog-post ul,
+.blog-post ol {
+    @apply pl-6 mb-4 text-gray-600;
+}
+
+.blog-post ul {
+    @apply list-disc;
+}
+
+.blog-post ol {
+    @apply list-decimal;
+}
+
+.blog-post strong {
+    @apply font-semibold;
+}
+
+.blog-post hr {
+    @apply my-8 border-t border-gray-300;
+}
+
+.blog-post {
+    @apply max-w-3xl mx-auto px-4 py-8;
+}
+
+/* Add these to your Tailwind CSS file or custom CSS */
+
+.blog-post h1 {
+    @apply text-4xl font-bold mb-6 text-gray-800;
+}
+
+.blog-post h2 {
+    @apply text-2xl font-semibold mt-8 mb-4 text-gray-700;
+}
+
+.blog-post h3 {
+    @apply text-xl font-semibold mt-6 mb-3 text-gray-700;
+}
+
+.blog-post p {
+    @apply mb-4 text-gray-600 leading-relaxed;
+}
+
+.blog-post ul,
+.blog-post ol {
+    @apply pl-6 mb-4 text-gray-600;
+}
+
+.blog-post ul {
+    @apply list-disc;
+}
+
+.blog-post ol {
+    @apply list-decimal;
+}
+
+.blog-post strong {
+    @apply font-semibold;
+}
+
+.blog-post hr {
+    @apply my-8 border-t border-gray-300;
+}
+
+.blog-post {
+    @apply max-w-3xl mx-auto px-4 py-8;
+}
+
+.blog-post code {
+    @apply bg-gray-800 text-gray-200 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.blog-post pre {
+    @apply bg-gray-800 text-gray-200 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+.blog-post pre code {
+    @apply bg-transparent p-0 rounded-none;
+}
