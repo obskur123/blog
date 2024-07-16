@@ -129,19 +129,17 @@ fn Post() -> impl IntoView {
 
     view! {
         <Suspense fallback=move || {
-            view! { <p>"Loading posts..."</p> }
+            view! { <p>"Cargando posts..."</p> }
         }>
 
             {move || match post.get() {
                 Some(Ok(content)) => {
                     view! { <div class="blog-post" inner_html=content></div> }
                 }
-                Some(Err(_)) => view! { <div>"Error loading post"</div> },
-                None => view! { <div>"Loading..."</div> },
+                Some(Err(_)) => view! { <div>"Error cargando post"</div> },
+                None => view! { <div>"Cargando..."</div> },
             }}
-            <script>
-                hljs.highlightAll();
-            </script>
+            <script>hljs.highlightAll();</script>
         </Suspense>
     }
 }
@@ -155,7 +153,7 @@ fn BlogHomePage() -> impl IntoView {
 
     view! {
         <Suspense fallback=move || {
-            view! { <p>"Loading posts..."</p> }
+            view! { <p>"Cargando posts..."</p> }
         }>
             {move || {
                 posts
@@ -189,62 +187,47 @@ fn BlogHomePage() -> impl IntoView {
 fn AboutPage() -> impl IntoView {
     view! {
         <div class="container mx-auto px-4 py-8">
-            <h1 class="text-4xl font-bold mb-6 text-gray-800">"About Me"</h1>
+            <h1 class="text-4xl font-bold mb-6 text-gray-800">"Acerca"</h1>
 
             <div class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"Who am I?"</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"¿Quién soy?"</h2>
                 <p class="text-gray-600 mb-4">
-                    "Hello! I'm Tomas Varas, a passionate developer and tech enthusiast. 
-                    I created this blog to share my journey in the world of programming, 
-                    with a focus on Rust, web development, and emerging technologies."
+                    "¡Hola! Soy Tomás Varas. Creé este blog para compartir mis experiencias en el desarrollo de software."
                 </p>
             </div>
 
             <div class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"My Expertise"</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"Mis habilidades"</h2>
                 <ul class="list-disc pl-6 text-gray-600">
-                    <li>"Rust programming"</li>
-                    <li>"Web development (Frontend and Backend)"</li>
-                    <li>"System design and architecture"</li>
-                    <li>"Open source contributions"</li>
+                    <li>"Desarrollo móvil"</li>
+                    <li>"Desarrollo Web (front & back)"</li>
                 </ul>
             </div>
 
             <div class="bg-white shadow-md rounded-lg p-6 mb-8">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"Blog's Purpose"</h2>
-                <p class="text-gray-600 mb-4">"This blog serves as a platform for me to:"</p>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"Propósito del blog"</h2>
+                <p class="text-gray-600 mb-4">"Esta es una plataforma para:"</p>
                 <ul class="list-disc pl-6 text-gray-600">
-                    <li>"Share insights and lessons from my coding experiences"</li>
-                    <li>"Explore and explain new technologies and programming concepts"</li>
-                    <li>"Connect with like-minded developers and enthusiasts"</li>
-                    <li>"Document my learning journey and personal projects"</li>
+                    <li>"Compartir conocimiento y lecciones de mis experiencias programando"</li>
+                    <li>"Explorar y explicar conceptos de programación"</li>
+                    <li>"Documentar mi aprendizaje y compartir mis proyectos"</li>
                 </ul>
             </div>
 
             <div class="bg-white shadow-md rounded-lg p-6">
-                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"Get in Touch"</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-gray-700">"Contacto"</h2>
                 <p class="text-gray-600 mb-4">
-                    "I'm always excited to connect with fellow developers and tech enthusiasts. 
-                    Feel free to reach out to me through:"
+                    "Siempre estoy dispuesto a conectar, me podés hablar vía:"
                 </p>
                 <ul class="list-disc pl-6 text-gray-600">
-                    <li>"Email: tomas@example.com"</li>
+                    <li>"Email: tomas_varas1@outlook.com"</li>
                     <li>
                         "GitHub: "
                         <a
-                            href="https://github.com/tomasvaras"
+                            href="https://github.com/obskur123"
                             class="text-blue-600 hover:underline"
                         >
-                            "@tomasvaras"
-                        </a>
-                    </li>
-                    <li>
-                        "Twitter: "
-                        <a
-                            href="https://twitter.com/tomasvaras"
-                            class="text-blue-600 hover:underline"
-                        >
-                            "@tomasvaras"
+                            "@obskur123"
                         </a>
                     </li>
                 </ul>
@@ -253,22 +236,22 @@ fn AboutPage() -> impl IntoView {
     }
 }
 
+
 #[component]
 fn ProjectsPage() -> impl IntoView {
     view! {
         <div class="container mx-auto px-4 py-8">
-            <h1 class="text-4xl font-bold mb-6 text-gray-800">"My Projects"</h1>
+            <h1 class="text-4xl font-bold mb-6 text-gray-800">"Mis Proyectos"</h1>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                // Project 1
+                // Proyecto 1
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                     <div class="p-6">
-                        <h2 class="text-2xl font-semibold mb-2 text-gray-700">
-                            "Rust Blog Engine"
-                        </h2>
+                        <h2 class="text-2xl font-semibold mb-2 text-gray-700">"Blog Personal"</h2>
                         <p class="text-gray-600 mb-4">
-                            "A high-performance blog engine built with Rust and Leptos, 
-                            featuring server-side rendering and dynamic content loading."
+                            "Este mismo blog lo construí con Rust y Leptos, 
+                            con una idea similar a un generador de páginas estáticas,
+                            cada post es un archivo markdown que se parsea a HTML."
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
@@ -278,111 +261,148 @@ fn ProjectsPage() -> impl IntoView {
                                 "Leptos"
                             </span>
                             <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "Web Development"
+                                "Desarrollo Web"
                             </span>
                         </div>
                         <a
-                            href="https://github.com/yourusername/rust-blog-engine"
+                            href="https://github.com/obskur123/blog"
                             class="text-blue-600 hover:underline"
+                            target="_blank"
                         >
-                            "View on GitHub"
+                            "Ver en GitHub"
                         </a>
                     </div>
                 </div>
 
-                // Project 2
+                // Proyecto 2
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                     <div class="p-6">
-                        <h2 class="text-2xl font-semibold mb-2 text-gray-700">
-                            "Go Microservices Framework"
-                        </h2>
+                        <h2 class="text-2xl font-semibold mb-2 text-gray-700">"Clon de Snake"</h2>
                         <p class="text-gray-600 mb-4">
-                            "A lightweight microservices framework in Go, designed for 
-                            building scalable and maintainable distributed systems."
+                            "Un clon del juego Snake desarrollado con Rust y Macroquad, compilado a WASM."
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "Go"
+                                "Rust"
                             </span>
                             <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "Microservices"
+                                "Macroquad"
                             </span>
                             <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "Backend"
+                                "WASM"
                             </span>
                         </div>
-                        <a
-                            href="https://github.com/yourusername/go-micro-framework"
-                            class="text-blue-600 hover:underline"
-                        >
-                            "View on GitHub"
-                        </a>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://github.com/obskur123/snake-rs"
+                                    class="text-blue-600 hover:underline"
+                                    target="_blank"
+                                >
+                                    "Ver en GitHub"
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://obskur123.github.io/snake-rs/"
+                                    class="text-blue-600 hover:underline"
+                                    target="_blank"
+                                >
+                                    "Jugar"
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                // Project 3
+                // Proyecto 3
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                     <div class="p-6">
-                        <h2 class="text-2xl font-semibold mb-2 text-gray-700">
-                            "AI-Powered Code Reviewer"
-                        </h2>
+                        <h2 class="text-2xl font-semibold mb-2 text-gray-700">"Clon de Tetris"</h2>
                         <p class="text-gray-600 mb-4">
-                            "An AI-driven tool that automatically reviews code, suggests improvements, 
-                            and detects potential bugs using machine learning algorithms."
+                            "Un clon de Tetris desarrollado con Rust y Macroquad, compilado a WASM."
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "Python"
+                                "Rust"
                             </span>
                             <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "Machine Learning"
+                                "Macroquad"
                             </span>
                             <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "DevOps"
+                                "WASM"
                             </span>
                         </div>
-                        <a
-                            href="https://github.com/yourusername/ai-code-reviewer"
-                            class="text-blue-600 hover:underline"
-                        >
-                            "View on GitHub"
-                        </a>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://github.com/obskur123/tetris-rs"
+                                    class="text-blue-600 hover:underline"
+                                    target="_blank"
+                                >
+                                    "Ver en GitHub"
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://obskur123.github.io/tetris-rs/"
+                                    class="text-blue-600 hover:underline"
+                                    target="_blank"
+                                >
+                                    "Jugar"
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
-                // Project 4
+                // Proyecto 4
                 <div class="bg-white shadow-md rounded-lg overflow-hidden">
                     <div class="p-6">
                         <h2 class="text-2xl font-semibold mb-2 text-gray-700">
-                            "Crypto Portfolio Tracker"
+                            "Calculadora/Intérprete"
                         </h2>
                         <p class="text-gray-600 mb-4">
-                            "A web application for tracking cryptocurrency portfolios, 
-                            featuring real-time price updates and performance analytics."
+                            "Un pequeño intérprete de expresiones matemáticas desarrollado con Vue 3 y TypeScript."
                         </p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 text-sm font-medium px-2.5 py-0.5 rounded">
+                                "Vue 3"
+                            </span>
+                            <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">
+                                "TypeScript"
+                            </span>
+                            <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">
                                 "JavaScript"
                             </span>
-                            <span class="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "React"
-                            </span>
-                            <span class="bg-yellow-100 text-yellow-800 text-sm font-medium px-2.5 py-0.5 rounded">
-                                "Blockchain"
-                            </span>
                         </div>
-                        <a
-                            href="https://github.com/yourusername/crypto-portfolio-tracker"
-                            class="text-blue-600 hover:underline"
-                        >
-                            "View on GitHub"
-                        </a>
+                        <ul>
+                            <li>
+                                <a
+                                    href="https://github.com/obskur123/calculator"
+                                    class="text-blue-600 hover:underline"
+                                    target="_blank"
+                                >
+                                    "Ver en GitHub"
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://github.com/obskur123/calculator"
+                                    class="text-blue-600 hover:underline"
+                                    target="_blank"
+                                >
+                                    "Link"
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     }
 }
+
 
 #[component]
 fn Layout(children: Children) -> impl IntoView {

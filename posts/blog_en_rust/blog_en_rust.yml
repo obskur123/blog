@@ -1,0 +1,4 @@
+titulo: "Un Blog En Rust"
+descripcion: "Desarrollo y algunos detalles de implementación de un blog estático con Rust, Leptos, SSR y Markdown..."
+fecha: "15/07/2024"
+archivo: "blog_en_rust.md"
